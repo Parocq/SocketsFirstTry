@@ -1,3 +1,5 @@
+package old;
+
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -46,22 +48,22 @@ public class Server {
         }
     }
 
-    public static void main(String[] args) {
-
-        try (ServerSocket serverSocket = new ServerSocket(8000)) {
-
-            int i = 1;
-
-            while (true) {
-                Socket incoming = serverSocket.accept();
-                System.out.println("WASAp. We've got " + i + " user(s) there!");
-                Runnable r = new ThreadHandler(incoming);
-                Thread t = new Thread(r);
-                t.start();
-                i++;
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
+//    public static void main(String[] args) {
+//
+//        try (ServerSocket serverSocket = new ServerSocket(8000)) {
+//
+//            int i = 1;
+//
+//            while (true) {
+//                Socket incoming = serverSocket.accept();
+//                System.out.println("WASAp. We've got " + i + " user(s) there!");
+//                Runnable r = new ThreadHandler(incoming);
+//                Thread t = new Thread(r);
+//                t.start();
+//                i++;
+//            }
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//    }
 }
